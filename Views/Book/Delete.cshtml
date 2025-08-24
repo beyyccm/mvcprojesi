@@ -1,0 +1,15 @@
+@model BookViewModel
+@{
+    ViewData["Title"] = "Kitap Sil";
+}
+<h2>Kitabı Sil</h2>
+<p>Bu kitabı silmek istediğinize emin misiniz?</p>
+<dl class="row">
+    <dt class="col-sm-3">Başlık</dt><dd class="col-sm-9">@Model.Title</dd>
+    <dt class="col-sm-3">Yazar</dt><dd class="col-sm-9">@Model.AuthorFullName</dd>
+</dl>
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="List" class="btn btn-secondary">İptal</a>
+</form>

@@ -1,0 +1,12 @@
+@model AuthorViewModel
+@{
+    ViewData["Title"] = "Yazar Detayı";
+}
+<h2>@Model.FullName</h2>
+<dl class="row">
+    <dt class="col-sm-3">Doğum Tarihi</dt>
+    <dd class="col-sm-9">@Model.DateOfBirth.ToString("dd.MM.yyyy")</dd>
+    <dt class="col-sm-3">Kitap Sayısı</dt>
+    <dd class="col-sm-9">@Model.BookCount</dd>
+</dl>
+<a asp-action="List" class="btn btn-secondary">Geri</a>
